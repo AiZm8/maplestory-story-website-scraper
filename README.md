@@ -46,6 +46,8 @@ Output will be saved as `story_of_maple.docx` in the same folder.
 
 ## How it works
 
+In short: Playwright drives a headless Chromium browser to load each chapter, BeautifulSoup pulls out the text and formatting, and python-docx writes it into a Word document.
+
 1. Loads the table of contents and collects each part and chapter link, skipping pages that aren't part of the main story
 2. Opens each chapter in headless Chromium with Playwright, since the Squarespace content is rendered with JavaScript and a plain HTTP request wouldn't return the text
 3. Parses each content block with BeautifulSoup, carrying text color and bold through nested tags
